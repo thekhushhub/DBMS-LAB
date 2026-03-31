@@ -1,0 +1,323 @@
+ASSIGNMENT 1
+  
+
+
+Create above Table with following fields.
+ANS. code number(5),event_nm char(15),deptno number(2),type char(15)
+
+insert 7 records
+ANS. insert into event values(&code,'&event_nm',&dept_no,'&type');
+
+describe structure of table
+ANS. desc event;
+
+display all records
+ANS. select * from event;
+
+display event name and size
+ANS. select event_nm,type from event;
+
+add two field and choose relatable data type : event_date and max_strength
+ANS. alter table event add(event_date date, max_strength number(5));
+
+change the field size of event_nm (25)
+ANS. alter table event modify(event_nm char(25));
+
+delete a field max_strength
+ANS. alter table event drop (max_strength);
+
+remove all records
+ANS. truncate table event_data;
+
+change the name of the event to event_data
+ANS. rename event to event_data;
+
+delete table
+ANS. drop table event_data;
+
+
+
+ASSIGNMENT 2
+
+
+
+create above table name as item_master.
+ANS. create table item_master (id varchar2(3),name char(15),type char(15),price number(9),quality char(10),adate date);
+
+insert data shown in table
+ANS. insert into item_master values ('&id','&name','&type',&price,'&quality','&adate');
+
+select information about price,quality and item_pack_date of the item
+ANS. select price,quality,item_pack_date from item_master;
+
+display information about item.
+ANS. select name from item_master ;
+
+sort the item by its quality.
+ANS. select * from item_master order by quality;
+
+display quality from table with distinct values
+ANS. select distinct quality from item_master;
+
+change the quality of item from good to verygood .
+ANS. update item_detail set quality ='verygood' where quality='good';
+
+display item having quality verygood.
+ANS. select * from item_master where quality = 'verygood';
+
+add new columns item_pur_date into table.
+ANS. alter table item_master add (item_pur_date date);
+
+Display all information of items having price more than Rs. 500.
+ANS. select * from item_master where price > 500 ;
+
+Delete the item having price of Rs. 50.
+ANS. delete from item_master where price = 50;
+
+Rename table from person to Item_detail.
+ANS. rename item_master to item_detail;
+
+
+
+ASSIGNMENT 3
+
+
+
+Create above Table name as Cust_master.
+ANS. create table cust_master (cust_no varchar2(3),cust_name char(15),address1 char(15),address2 char(15),city char(10),state char(15), ph_no number(15));
+
+Insert Data shown in table.
+ANS. insert into cust_master values ('&cust_no','&cust_name','&address1','&address2','&city','&state','&ph_no');
+
+Select information about all customers.
+ANS. select * from cust_master;
+
+Display the list of customers belonging to “Gujarat” state.
+ANS. select * from cust_master where state='gujarat';
+
+Sort the customer by their customer name.
+ANS. select * from cust_master order by cust_name;
+
+Display city from table with values.
+ANS. select distinct city from cust_master ;
+
+Change the address1 of priya from “Ring Road” to “CG Road”.
+ANS. UPDATE cust_master SET address1 = 'CG Road' WHERE name = 'priya' AND address1 ='Ring Road';
+
+Display city of customer whose state is Gujarat.
+ANS. SELECT city FROM cust_master WHERE state = 'Gujarat';
+
+Add new column pin_code into cust_master table.
+ANS. ALTER TABLE cust_master ADD pin_code INT;
+
+Drop column pin_code from table.
+ANS. ALTER TABLE cust_master DROP COLUMN pin_code;
+
+Delete the customer having ph_no value '7898452034'.
+ANS. DELETE FROM cust_master WHERE ph_no = '7898452034';
+
+Rename table from cust_master to customer_detail.
+ANS. ALTER TABLE cust_master RENAME TO customer_detail;
+
+
+
+ASSIGNMENT 4
+
+
+
+Create above Table name as Person.
+ANS. create table person(person_id number(10), fname char(10), lname char(10), city char(10), salary number(15));
+
+Insert data shown in table.
+ANS. select * from person;
+
+Select information about Person_Id, Fname of the person.
+ANS. select person_id,fname from person;
+
+Display the list of person.
+ANS. select * from person;
+
+Sort the person by salary.
+ANS. select * from person order by salary;
+
+Display city from table with distinct values.
+ANS. select distinct city from person;
+
+Change the city of sandip from pune to kolkata.
+ANS. update person set city='kolkata' where fname='sandip' and city='pune';
+
+Display person whose Lname is “Prajapati”.
+ANS. select * from person where lname='prajapati';
+
+Add new columns state, Birthdate and pincode into table.
+ANS. alter table person add(state char(10), birthdate date, pincode number(6));
+
+Display all information of person having salary more than 6000.
+ANS. select * from person where salary > 6000;
+
+Delete the person having salary less than 3000.
+ANS. delete person where salary < 3000;
+
+Rename table from person to person_master.
+ANS. rename person to person_master;
+
+
+
+ASSIGNMENT 5
+
+
+
+Create above table with name Bank_Branch.
+ans. create table bank_branch(branch_id varchar2(15), branch_name char(15), branch_address char(15), branch_city char(15), branch_state char(15), branch_open_date date);
+
+Insert given information into a table.
+ans. insert into bank_branch values('&branch_id', '&branch_name','&branch_address','&branch_city','&branch_state','&branch_open_date');
+
+Display all information of Bank_Branch.
+ans. select * from bank_branch;
+
+Display Branch_id of branch.
+ans. select branch_id from bank_branch;
+
+Display Branch_id and Branch_address from Branch.
+ans. select branch_id,branch_address from bank_branch;
+
+Display Branch_name, Branch_addess and Branch_city from branch table.
+ans. select branch_name,branch_address,branch_city from bank_branch;
+
+Display Branch_city, Branch_state and Branch_open_date from Branch.
+ans. select branch_city,branch_state,branch_open_date from bank_branch;
+
+Sort table by Branch_id.
+ans. select * from bank_branch order by branch_id;
+
+Sort table by Branch_name.
+ans. select * from bank_branch order by branch_name;
+
+Sort table by Branch_city.
+ans. select * from bank_branch order by branch_city;
+
+Sort table by Branch_state.
+ans. select * from bank_branch order by branch_state;
+
+Change the size of Branch_state column.
+ans. alter table bank_branch modify(branch_state char(20));
+
+Change the branch_name = Union where id = B003.
+ans. update bank_branch set branch_name='UNION' where branch_id='B003';
+
+Change the state = Delhi of BOI branch.
+ans. update bank_branch set branch_state='delhi' where branch_name='BOI';
+
+Change the branch_open_date = 04-nov-2015 of Union branch.
+ans. update bank_branch set branch_open_date='04-nov-2015' where branch_name='UNION';
+
+Add column Pincode in branch.
+ans. alter table bank_branch add(pincode number(6));
+
+Insert pincode = 360006 of Dena Bank.
+ans. update bank_branch set pincode=360006 where branch_name='Dena bank';
+
+Delete information of Branch having branch_open_date = 07-may-2011.
+ans. delete bank_branch where branch_open_date='07-may-2011';
+
+Rename table Bank_Branch to Branch_master.
+ans. rename bank_branch to branch_master;
+
+Display structure of Branch_master.
+ans. desc branch_master;
+
+Create Branch_info from Branch_master.
+ans. create table branch_info as select * from branch_master;
+
+
+
+ASSIGNMENT 7
+
+
+
+Retrieve all data from employee, jobs and deposit.
+Ans.
+SELECT * FROM EMPLOYEE;
+SELECT * FROM JOB;
+SELECT * FROM DEPOSITS;
+
+Give details of account no. and deposited rupees of customers having account opened between dates 01-01-06 and 25-07-06.
+Ans. SELECT actno, amount FROM DEPOSITS WHERE bdate BETWEEN '01-01-06' AND '25-07-06';
+
+Display all jobs with minimum salary is greater than 4000.
+Ans. SELECT * FROM JOB WHERE min_sal > 4000;
+
+Display name and salary of employee whose department no is 20. Give alias name to name of employee.
+Ans. SELECT emp_name AS "Employee Name", emp_sal FROM EMPLOYEE WHERE dept_no = 20;
+
+Display employee number, name and department details of those employee whose department lies in (10,20).
+Ans. SELECT emp_no, emp_name, dept_no FROM EMPLOYEE WHERE dept_no IN (10, 20);
+
+Display all employee whose name start with A.
+Ans. SELECT * FROM EMPLOYEE WHERE emp_name LIKE 'A%';
+
+Display all employee whose third character is "a".
+Ans. SELECT * FROM EMPLOYEE WHERE emp_name LIKE '__a%';
+
+Display all employee whose name start with A and third character is a.
+Ans. SELECT * FROM EMPLOYEE WHERE emp_name LIKE 'A_a%';
+
+Display name, number and salary of those employees whose name is 5 characters long and first three characters are Ani.
+Ans. SELECT emp_name, emp_no, emp_sal FROM EMPLOYEE WHERE emp_name LIKE 'Ani__';
+
+Sort and display the names of customers from deposit table.
+Ans. SELECT cname FROM DEPOSIT ORDER BY cname ASC;
+
+
+
+ASSIGNMENT 8
+
+
+
+List total deposit from deposit.
+ans. SELECT SUM(amount) FROM deposits;
+
+List total loan from karolbagh branch.
+ans. SELECT SUM(amount) FROM deposit WHERE bname = 'karolbagh';
+
+Give maximum loan from branch vrce.
+ans. SELECT MAX(amount) FROM borrow WHERE bname = 'vrce';
+
+Count total number of customers.
+ans. SELECT COUNT(*) FROM customer;
+
+Count total number of customer's cities.
+ans. SELECT COUNT(DISTINCT city) FROM customer;
+
+Create table supplier from employee with all the columns.
+ans. CREATE TABLE supplier AS SELECT * FROM employee;
+
+Create table sup1 from employee with first two columns.
+ans. CREATE TABLE sup1 AS SELECT emp_no, emp_name FROM employee;
+
+Create table sup2 from employee with no data.
+ans. CREATE TABLE sup2 AS SELECT * FROM employee WHERE 1=2;
+
+Insert the data into sup2 from employee whose second character should be n and string should be 5 characters long in employee name field.
+ans. INSERT INTO sup2 SELECT * FROM employee WHERE emp_name LIKE 'n__';
+
+Delete all the rows from sup1.
+ans. DELETE FROM sup1;
+
+Delete the detail of supplier whose sup_no is 103.
+ans. DELETE FROM supplier WHERE emp_no = 103;
+
+Rename the table sup2 to suplier_two.
+ans. RENAME sup2 TO suplier_two;
+
+Destroy table sup1 with all the data.
+ans. DROP TABLE sup1;
+
+Update the value dept_no to 10 where second character of emp. name is m.
+ans. UPDATE employee SET dept_no = 10 WHERE emp_name LIKE '_m%';
+
+Update the value of employee name whose employee number is 103.
+ans. UPDATE employee SET emp_name = 'NewName' WHERE emp_no = 103;
+
+
